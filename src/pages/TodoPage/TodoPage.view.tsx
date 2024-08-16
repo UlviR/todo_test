@@ -1,13 +1,24 @@
-import { create } from "zustand";
-import ListItem from "../../common/ListItem/ListItem.view";
+import { Button } from "antd";
 import TodoList from "../../common/TodoLIst";
-import { Goal } from "../../types/ListTypes";
+import { PlusOutlined } from "@ant-design/icons";
+import AddGoalForm from "../../common/AddGoalForm";
+import { FC, useState } from "react";
 
-
-
-const TodoPageView = () => {
+const TodoPageView: FC = () => {
+	const [showModal, setShowModal] = useState(false);
 	return (
 		<div>
+			<div>
+				<Button shape="round" onClick={() => setShowModal(true)}>
+					<PlusOutlined />
+				</Button>
+			</div>
+
+			<AddGoalForm
+				isModalOpen={showModal}
+				handleClose={() => setShowModal(false)}
+			/>
+
 			<TodoList />
 		</div>
 	);

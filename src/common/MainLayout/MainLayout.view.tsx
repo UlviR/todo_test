@@ -1,5 +1,4 @@
 import { Layout, Menu, Breadcrumb, theme } from "antd";
-// import Sider from "antd/es/layout/Sider";
 import { PaperClipOutlined } from "@ant-design/icons";
 import type { MenuProps } from "antd";
 import React, { PropsWithChildren, useState } from "react";
@@ -61,7 +60,8 @@ const MainLayoutView: React.FC<PropsWithChildren> = ({ children }) => {
 					</div>
 				</Content>
 				<Footer style={{ textAlign: "center" }}>
-					TODO APP for MindBox ©{new Date().getFullYear()} Created by Ulvi Rzazade
+					TODO APP for MindBox ©{new Date().getFullYear()} Created by Ulvi
+					Rzazade
 				</Footer>
 			</Layout>
 		</Layout>

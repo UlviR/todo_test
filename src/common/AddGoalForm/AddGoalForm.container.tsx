@@ -1,7 +1,7 @@
 import { FC } from "react";
 import AddGoalFormView from "./AddGoalForm.view";
 import { useForm } from "antd/es/form/Form";
-import { Goal, Task } from "../../types/ListTypes";
+import { FormValues, Goal, Task } from "../../types/ListTypes";
 import { useTodoStore } from "../../store/TodoStore";
 
 interface AddGoalFormContainerProps {
@@ -15,7 +15,7 @@ const AddGoalFormContainer: FC<AddGoalFormContainerProps> = ({
 }) => {
 	const [form] = useForm();
 	const addGoal = useTodoStore((store) => store.addGoal);
-	const handleOk = (values) => {
+	const handleOk = (values: FormValues) => {
 		console.log(values);
 		if (values["goal"] !== undefined) {
 			form.submit();
@@ -25,7 +25,7 @@ const AddGoalFormContainer: FC<AddGoalFormContainerProps> = ({
 			form.resetFields();
 		}
 	};
-	function addNewGoal(values) {
+	function addNewGoal(values: FormValues) {
 		const goall: Goal = {
 			id: (new Date().getTime() / 1000).toString(),
 			name: values["goal"],

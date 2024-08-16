@@ -1,6 +1,7 @@
 import { MinusCircleOutlined, PlusOutlined } from "@ant-design/icons";
 import { Input, Button, Form, FormInstance, Modal } from "antd";
 import { FC } from "react";
+import { FormValues } from "../../types/ListTypes";
 
 const formItemLayout = {
 	labelCol: {
@@ -22,7 +23,7 @@ const formItemLayoutWithOutLabel = {
 
 interface AddGoalFormViewProps {
 	cancelModal: () => void;
-	submitModal: (values) => void;
+	submitModal: (values: FormValues) => void;
 	isModalOpen: boolean;
 	form: FormInstance;
 }

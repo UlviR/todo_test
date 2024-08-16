@@ -9,3 +9,8 @@ export interface Goal {
 	name: string;
 	tasks: Task[];
 }
+
+export interface FormValues {
+	goal: string;
+	tasks: string[];
+}
